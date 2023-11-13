@@ -1,3 +1,6 @@
+from operaciones import sumar, restar, multiplicar, comprobarTipos
+
+
 def mostrar_menu():
     print(
         " _____       ___   _       _____   _   _   _           ___   _____   _____   _____   "
@@ -17,6 +20,7 @@ def mostrar_menu():
     print(
         "\_____| /_/   |_| |_____| \_____| \_____/ |_____| /_/   |_|   |_|   \_____/ |_|  \_\ "
     )
+
     print("1.- Sumar")
     print("2.- Restar")
     print("3.- Multiplicar")
@@ -27,27 +31,34 @@ def mostrar_menu():
 
 def menuOpciones(elecciones):
     if elecciones == 1:
-        """"""
-    elif elecciones == 2:
-        """"""
+        valores = pedirValores()
+        if comprobarTipos(valores[0], valores[1]):
+            sumar(valores[0], valores[1])
+        else:
+            print("Los valores introducidos no son los correctos.")
+    if elecciones == 2:
+        valores = pedirValores()
+        if comprobarTipos(valores[0], valores[1]):
+            restar(valores[0], valores[1])
+        else:
+            print("Los valores introducidos no son los correctos.")
+    if elecciones == 3:
+        valores = pedirValores()
+        if comprobarTipos(valores[0], valores[1]):
+            multiplicar(valores[0], valores[1])
+        else:
+            print("Los valores introducidos no son los correctos.")
 
-    elif elecciones == 3:
-        """"""
+    if elecciones == 4:
+        valores = pedirValores()
+        if comprobarTipos(valores[0], valores[1]):
+            """"""
+        else:
+            print("Los valores introducidos no son los correctos.")
+
 
 def pedirValores():
     print("Debe de introducir dos valores")
     valor1 = input("Introduzca el primer valor")
     valor2 = input("Introduzca el segundo valor")
-    
-    return [valor1,valor2]
-
-def comprobarInt(num1, num2):
-    return True if type(num1) == int and type(num2) == int else False
-    
-
-def comprobarFloat(num1, num2):
-    return True if type(num1) == float and type(num2) == float else False
-
-
-def comprobarValores(num1, num2):
-    return comprobarInt(num1) and comprobarFloat(num1, num2)
+    return [valor1, valor2]
