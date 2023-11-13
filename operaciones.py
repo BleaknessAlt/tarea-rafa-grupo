@@ -27,3 +27,8 @@ def multiplicar(num1, num2):
             numero += num1
             
     return numero
+
+def dividir(num1, num2):
+    esInt1 = isistance(num1, int)
+    esInt2 = isistance(num2, int)
+
